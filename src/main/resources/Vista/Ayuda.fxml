@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.AyudaController" spacing="10" styleClass="ventana-ayuda">
+   <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+   <Label text="📖 Ayuda - ¿Quién es Quién?" style="-fx-text-fill: #e94560; -fx-font-weight: bold; -fx-alignment: center; -fx-text-alignment: center;">
+      <font><Font name="System Bold" size="22"/></font>
+   </Label>
+   <Separator/>
+
+   <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS" styleClass="tabs-ayuda">
+
+      <Tab text="Cómo jugar">
+         <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;">
+            <VBox spacing="12" style="-fx-background-color: transparent;">
+               <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+               <Label text="🎮 Reglas del juego" style="-fx-text-fill: #e94560; -fx-font-weight: bold;">
+                  <font><Font name="System Bold" size="16"/></font>
+               </Label>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="El juego '¿Quién es Quién?' es un juego de adivinanza para un jugador. La máquina selecciona un personaje de Los Soprano al azar y tú debes adivinarlo haciendo preguntas."/>
+               <Separator/>
+               <Label text="📋 Instrucciones" style="-fx-text-fill: #e94560; -fx-font-weight: bold;">
+                  <font><Font name="System Bold" size="16"/></font>
+               </Label>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="1. Al iniciar verás un tablero con 24 personajes de Los Soprano."/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="2. En el panel derecho, selecciona una pregunta del desplegable."/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="3. Pulsa 'Preguntar'. La máquina responderá Sí o No."/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="4. Los personajes que no coincidan se oscurecerán."/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="5. Sigue preguntando hasta saber quién es."/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="6. Para adivinar, haz clic sobre el personaje."/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="7. Si aciertas ganas, si fallas pierdes."/>
+               <Separator/>
+               <Label text="💡 Consejos" style="-fx-text-fill: #e94560; -fx-font-weight: bold;">
+                  <font><Font name="System Bold" size="16"/></font>
+               </Label>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Empieza con preguntas generales como '¿Es hombre?' para eliminar muchos."/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Fíjate en cuántos personajes quedan antes de adivinar."/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Intenta adivinar con el menor número de preguntas."/>
+            </VBox>
+         </ScrollPane>
+      </Tab>
+
+      <Tab text="Personajes">
+         <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;">
+            <VBox spacing="8" style="-fx-background-color: transparent;">
+               <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+               <Label text="👥 Personajes" style="-fx-text-fill: #e94560; -fx-font-weight: bold;">
+                  <font><Font name="System Bold" size="16"/></font>
+               </Label>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="El juego incluye 24 personajes de la serie Los Soprano:"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Tony Soprano - Capo, corpulento, pelo castaño, calvo"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Carmela Soprano - Esposa de Tony, pelo rubio, elegante"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Christopher Moltisanti - Sobrino de Tony, joven, pelo oscuro"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Paulie Walnuts - Pelo canoso con 'alas', siempre con traje"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Silvio Dante - Pelo negro (toupée), consigliere"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Junior Soprano - Canoso, calvo, gafas, boss"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Bobby Baccalieri - Corpulento, pelo oscuro, bigote"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Adriana La Cerva - Joven, pelo oscuro, elegante"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Meadow Soprano - Hija de Tony, joven, morena"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• A.J. Soprano - Hijo de Tony, joven, pelo castaño"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Dra. Melfi - Psiquiatra, pelo castaño, elegante"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Janice Soprano - Hermana de Tony, pelo oscuro"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Livia Soprano - Madre de Tony, canosa"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Johnny Sack - Boss de NY, bigote, traje"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Phil Leotardo - Canoso, bigote, boss"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Vito Spatafore - Corpulento, pelo oscuro, bigote"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Ralph Cifaretto - Pelo castaño, bigote, elegante"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Furio Giunta - Pelo oscuro largo, italiano"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Richie Aprile - Pelo oscuro, calvo"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Pussy Bonpensiero - Corpulento, calvo, bigote"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Artie Bucco - Pelo oscuro, bigote, gafas"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Hesh Rabkin - Canoso, calvo, gafas"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Gloria Trillo - Pelo oscuro, elegante"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Rosalie Aprile - Pelo rubio, elegante"/>
+            </VBox>
+         </ScrollPane>
+      </Tab>
+
+      <Tab text="Preguntas">
+         <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;">
+            <VBox spacing="8" style="-fx-background-color: transparent;">
+               <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+               <Label text="❓ Preguntas disponibles" style="-fx-text-fill: #e94560; -fx-font-weight: bold;">
+                  <font><Font name="System Bold" size="16"/></font>
+               </Label>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="1. ¿Es hombre?"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="2. ¿Tiene pelo castaño o negro?"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="3. ¿Tiene pelo rubio?"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="4. ¿Tiene pelo canoso o blanco?"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="5. ¿Es calvo o tiene poco pelo?"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="6. ¿Usa gafas?"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="7. ¿Es corpulento o gordo?"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="8. ¿Es jefe o capo?"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="9. ¿Es de la familia Soprano?"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="10. ¿Tiene bigote o perilla?"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="11. ¿Es joven (menos de 30)?"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="12. ¿Usa traje elegante?"/>
+            </VBox>
+         </ScrollPane>
+      </Tab>
+
+      <Tab text="Acerca de">
+         <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;">
+            <VBox spacing="12" style="-fx-background-color: transparent;">
+               <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+               <Label text="ℹ️ Acerca de" style="-fx-text-fill: #e94560; -fx-font-weight: bold;">
+                  <font><Font name="System Bold" size="16"/></font>
+               </Label>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="¿Quién es Quién? - Los Soprano"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="Versión 1.0"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="Desarrollado con JavaFX 21"/>
+               <Separator/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="Adaptación del clásico juego de mesa '¿Quién es Quién?' ambientado en el universo de la serie Los Soprano (1999-2007) creada por David Chase para HBO."/>
+               <Separator/>
+               <Label text="Tecnologías" style="-fx-text-fill: #e94560; -fx-font-weight: bold;">
+                  <font><Font name="System Bold" size="16"/></font>
+               </Label>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Java 17"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• JavaFX 21"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• Maven"/>
+               <Label wrapText="true" style="-fx-text-fill: #3e2723; -fx-font-size: 13px;" text="• FXML + CSS"/>
+            </VBox>
+         </ScrollPane>
+      </Tab>
+
+   </TabPane>
+
+   <Button fx:id="botonCerrar" text="Cerrar" onMouseClicked="#cerrarAyuda" maxWidth="Infinity" styleClass="boton-cerrar-ayuda"/>
+</VBox>

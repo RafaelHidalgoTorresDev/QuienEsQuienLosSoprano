@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+
+<StackPane fx:id="rootPane" prefHeight="750.0" prefWidth="1100.0" styleClass="fondo-principal" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.JuegoController">
+    <AnchorPane>
+       <children>
+    
+          <!-- BARRA SUPERIOR -->
+          <VBox layoutX="0.0" layoutY="0.0" styleClass="barra-superior" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" spacing="5">
+             <padding><Insets top="15" right="20" bottom="10" left="20"/></padding>
+             <HBox alignment="CENTER" spacing="15">
+                <Label text="¿Quién es Quién?" styleClass="titulo-juego">
+                   <font><Font name="System Bold" size="28"/></font>
+                </Label>
+                <Label text="Los Soprano: Case Files" style="-fx-text-fill: #5d4037; -fx-font-size: 16px; -fx-font-style: italic; -fx-font-family: 'Courier New';"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="botonAyuda" text="❓ Ayuda" onMouseClicked="#abrirAyuda" styleClass="boton-ayuda"/>
+             </HBox>
+             <Separator style="-fx-background-color: #8d6e63; -fx-opacity: 0.5;"/>
+          </VBox>
+    
+          <!-- TABLERO CENTRAL -->
+          <ScrollPane layoutY="75.0" style="-fx-background: transparent; -fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="75.0" fitToWidth="true">
+             <GridPane fx:id="tableroGrid" alignment="CENTER" style="-fx-background-color: transparent;">
+                <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+             </GridPane>
+          </ScrollPane>
+    
+          <!-- PANEL LATERAL DERECHO -->
+          <VBox spacing="15" styleClass="panel-lateral" prefWidth="280" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+             <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+    
+             <Label text="EXPEDIENTE: PREGUNTAS" style="-fx-text-fill: #b71c1c; -fx-font-weight: bold; -fx-alignment: center; -fx-text-alignment: center; -fx-font-family: 'Courier New';">
+                <font><Font name="System Bold" size="14"/></font>
+             </Label>
+             <Separator style="-fx-background-color: #8d6e63;"/>
+    
+             <Label text="Selecciona pista:" style="-fx-text-fill: #3e2723; -fx-font-size: 12px; -fx-font-family: 'Courier New';"/>
+             <ComboBox fx:id="comboPregunta" maxWidth="Infinity" styleClass="combo-pregunta"/>
+    
+             <Button fx:id="botonPreguntar" text="INVESTIGAR" onMouseClicked="#preguntar" maxWidth="Infinity" styleClass="boton-preguntar"/>
+    
+             <Separator style="-fx-background-color: #8d6e63;"/>
+    
+             <Label text="RESULTADO:" style="-fx-text-fill: #b71c1c; -fx-font-weight: bold; -fx-font-family: 'Courier New';">
+                <font><Font name="System Bold" size="13"/></font>
+             </Label>
+             <Label fx:id="lblRespuesta" text="Interroga a un sospechoso o selecciona una pista..." wrapText="true" styleClass="respuesta-texto"/>
+    
+             <Separator style="-fx-background-color: #8d6e63;"/>
+    
+             <Label text="ESTADÍSTICAS DEL CASO" style="-fx-text-fill: #b71c1c; -fx-font-weight: bold; -fx-font-family: 'Courier New';">
+                <font><Font name="System Bold" size="13"/></font>
+             </Label>
+             <VBox spacing="8" alignment="CENTER">
+                <Label fx:id="lblPreguntas" text="Pistas usadas: 0" maxWidth="Infinity" styleClass="etiqueta-estadistica"/>
+                <Label fx:id="lblRestantes" text="Sospechosos: 24" maxWidth="Infinity" styleClass="etiqueta-estadistica"/>
+             </VBox>
+    
+             <Separator style="-fx-background-color: #8d6e63;"/>
+             <Region VBox.vgrow="ALWAYS"/>
+    
+             <Button fx:id="botonNuevaPartida" text="NUEVO CASO" onMouseClicked="#nuevaPartida" maxWidth="Infinity" styleClass="boton-nueva-partida"/>
+             <Label text="Haz clic en la foto para acusar" wrapText="true" style="-fx-text-fill: #5d4037; -fx-font-size: 11px; -fx-font-style: italic; -fx-text-alignment: center; -fx-alignment: center; -fx-font-family: 'Courier New';"/>
+          </VBox>
+    
+       </children>
+    </AnchorPane>
+    
+    <!-- OVERLAY DE CELEBRACION (Oculto por defecto) -->
+    <StackPane fx:id="overlayCelebracion" visible="false" style="-fx-background-color: rgba(0,0,0,0.8);">
+        <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #f4f1ea; -fx-padding: 30; -fx-border-color: #b71c1c; -fx-border-width: 5; -fx-effect: dropshadow(three-pass-box, black, 20, 0, 0, 0); -fx-max-width: 400; -fx-max-height: 550; -fx-rotate: -2;">
+            <Label text="¡CASO RESUELTO!" style="-fx-font-family: 'Courier New'; -fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #b71c1c; -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.5), 2, 0, 1, 1);"/>
+            
+            <StackPane style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 15, 0, 5, 5); -fx-rotate: 3;">
+                <Region style="-fx-background-color: white; -fx-min-width: 220; -fx-min-height: 260;"/>
+                <VBox alignment="TOP_CENTER" spacing="10" style="-fx-padding: 10;">
+                    <javafx.scene.image.ImageView fx:id="imgCelebracion" fitWidth="200" fitHeight="200" preserveRatio="true"/>
+                    <Label fx:id="lblNombreCelebracion" text="NOMBRE" style="-fx-font-family: 'Courier New'; -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #3e2723;"/>
+                </VBox>
+            </StackPane>
+            
+            <Label fx:id="lblMensajeCelebracion" text="Has encontrado al culpable." wrapText="true" textAlignment="CENTER" style="-fx-font-family: 'Courier New'; -fx-font-size: 16px; -fx-text-fill: #3e2723;"/>
+            
+            <Button text="CERRAR EXPEDIENTE" onMouseClicked="#cerrarCelebracion" styleClass="boton-nueva-partida"/>
+        </VBox>
+    </StackPane>
+    
+    <!-- OVERLAY DE DERROTA (Oculto por defecto) -->
+    <StackPane fx:id="overlayDerrota" visible="false" style="-fx-background-color: rgba(0,0,0,0.85);">
+        <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #f4f1ea; -fx-padding: 30; -fx-border-color: #263238; -fx-border-width: 5; -fx-effect: dropshadow(three-pass-box, black, 20, 0, 0, 0); -fx-max-width: 420; -fx-max-height: 600; -fx-rotate: 2;">
+            <Label text="¡CASO FALLIDO!" style="-fx-font-family: 'Courier New'; -fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #263238; -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.5), 2, 0, 1, 1);"/>
+            
+            <Label text="El verdadero culpable era:" style="-fx-font-family: 'Courier New'; -fx-font-size: 14px; -fx-text-fill: #5d4037; -fx-font-style: italic;"/>
+            
+            <StackPane style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 15, 0, 5, 5); -fx-rotate: -3;">
+                <Region style="-fx-background-color: white; -fx-min-width: 220; -fx-min-height: 260;"/>
+                <VBox alignment="TOP_CENTER" spacing="10" style="-fx-padding: 10;">
+                    <javafx.scene.image.ImageView fx:id="imgDerrota" fitWidth="200" fitHeight="200" preserveRatio="true"/>
+                    <Label fx:id="lblNombreDerrota" text="NOMBRE" style="-fx-font-family: 'Courier New'; -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #b71c1c;"/>
+                </VBox>
+            </StackPane>
+            
+            <Label fx:id="lblMensajeDerrota" text="¡El criminal ha escapado!" wrapText="true" textAlignment="CENTER" style="-fx-font-family: 'Courier New'; -fx-font-size: 14px; -fx-text-fill: #3e2723;"/>
+            
+            <Button text="CERRAR EXPEDIENTE" onMouseClicked="#cerrarDerrota" styleClass="boton-nueva-partida"/>
+        </VBox>
+    </StackPane>
+</StackPane>
